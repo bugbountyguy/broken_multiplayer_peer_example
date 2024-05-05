@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://btmgwesgmqgrl"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_hexqi"]
+[ext_resource type="Texture2D" uid="uid://cph5xhsioupwp" path="res://icon.svg" id="2_vjt35"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_hexqi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vjt35")
+
+[node name="SteamLabel" type="Label" parent="."]
+offset_left = -55.0
+offset_top = -94.0
+offset_right = -15.0
+offset_bottom = -71.0
+text = "Steam: "
+
+[node name="RPCLabel" type="Label" parent="."]
+offset_left = -55.0
+offset_top = -119.0
+offset_right = -15.0
+offset_bottom = -96.0
+text = "RPC: "

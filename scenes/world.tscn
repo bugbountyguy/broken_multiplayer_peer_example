@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://605hg4h51lq5"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_ijlg1"]
+[ext_resource type="Script" path="res://scripts/custom_spawner.gd" id="1_lkxx0"]
+[ext_resource type="PackedScene" uid="uid://btmgwesgmqgrl" path="res://scenes/player.tscn" id="3_xbmut"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_ijlg1")
+main_menu_scene_file = "res://scenes/main_menu.tscn"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." node_paths=PackedStringArray("spawn_positions")]
+_spawnable_scenes = PackedStringArray("res://scenes/player.tscn")
+spawn_path = NodePath("..")
+script = ExtResource("1_lkxx0")
+player_scene = ExtResource("3_xbmut")
+spawn_positions = [NodePath("../SpawnLocations/Spawn1"), NodePath("../SpawnLocations/Spawn2"), NodePath("../SpawnLocations/Spawn3"), NodePath("../SpawnLocations/Spawn4")]
+
+[node name="InstructionsLabel" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 28.0
+
+[node name="SpawnLocations" type="Node2D" parent="."]
+position = Vector2(450, 300)
+
+[node name="Spawn1" type="Node2D" parent="SpawnLocations"]
+
+[node name="Spawn2" type="Node2D" parent="SpawnLocations"]
+position = Vector2(250, 0)
+
+[node name="Spawn3" type="Node2D" parent="SpawnLocations"]
+position = Vector2(0, 250)
+
+[node name="Spawn4" type="Node2D" parent="SpawnLocations"]
+position = Vector2(250, 250)
